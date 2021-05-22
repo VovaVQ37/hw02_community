@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Post, Group
 
 
@@ -17,5 +18,3 @@ class GroupAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Group, GroupAdmin)
-
-# Register your models here.

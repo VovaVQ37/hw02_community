@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.db.models.deletion import SET_NULL
 
 User = get_user_model()
 
@@ -37,9 +38,10 @@ class Post(models.Model):
     )
 
     group = models.ForeignKey(
-        Group, on_delete=models.CASCADE,
+        Group, on_delete=models.SET_NULL,
         null=True,
         blank=True
     )
 
-# Create your models here.
+    class Meta:
+        ordering = ["-pub_date"]
